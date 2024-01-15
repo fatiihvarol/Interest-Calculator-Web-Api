@@ -32,3 +32,5 @@ C:\Users\fatih\RiderProjects\Interest_Calculator\Interest_Calculator\obj\Debug\n
 C:\Users\fatih\RiderProjects\Interest_Calculator\Interest_Calculator\obj\Debug\net8.0\Interest_Calculator.pdb
 C:\Users\fatih\RiderProjects\Interest_Calculator\Interest_Calculator\obj\Debug\net8.0\Interest_Calculator.genruntimeconfig.cache
 C:\Users\fatih\RiderProjects\Interest_Calculator\Interest_Calculator\obj\Debug\net8.0\ref\Interest_Calculator.dll
+C:\Users\fatih\RiderProjects\Interest_Calculator\Interest_Calculator\bin\Debug\net8.0\MediatR.dll
+C:\Users\fatih\RiderProjects\Interest_Calculator\Interest_Calculator\bin\Debug\net8.0\MediatR.Contracts.dll

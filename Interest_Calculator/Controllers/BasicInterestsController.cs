@@ -12,7 +12,7 @@ namespace Interest_Calculator.Controllers
     [ApiController]
     public class BasicInterestsController(ISender mediator) : ControllerBase
     {
-        [HttpPost("calculate")]
+        [HttpPost]
         public async Task<ActionResult<ApiResponse<InterestResponse>>> Calculate([FromBody] InterestRequest request)
         {
             var query = new CalculateBasicInterestQuery(request);

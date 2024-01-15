@@ -1,3 +1,6 @@
+    using System.Reflection;
+    using Interest_Calculator.Business.Cqrs;
+
     var builder = WebApplication.CreateBuilder(args);
 
     // Add services to the container.
@@ -5,6 +8,7 @@
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
     builder.Services.AddControllers();
+    builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CalculateBasicInterestQuery).GetTypeInfo().Assembly));
 
     var app = builder.Build();
 

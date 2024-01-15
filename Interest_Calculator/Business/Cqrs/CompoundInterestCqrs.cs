@@ -5,4 +5,4 @@ using MediatR;
 
 namespace Interest_Calculator.Business.Cqrs;
 
-public record CalculateCompoundInterestQuery(Interest Model ):IRequest <ApiResponse<InterestResponse>>;
+public record CalculateCompoundInterestQuery(InterestRequest Model ):IRequest <ApiResponse<InterestResponse>>;
