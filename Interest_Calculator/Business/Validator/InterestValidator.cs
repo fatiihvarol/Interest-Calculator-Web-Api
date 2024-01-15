@@ -16,7 +16,7 @@ namespace Interest_Calculator.Business.Validator
             // InterestRate alanı için doğrulama kuralları
             RuleFor(x => x.InterestRate)
                 .NotEmpty().WithMessage("The InterestRate field is required.")
-                .InclusiveBetween(0, 1).WithMessage("The InterestRate field must be between 0 and 1.");
+                .InclusiveBetween(0, 100).WithMessage("The InterestRate field must be between 0 and 1.");
 
             // Maturity alanı için doğrulama kuralları
             RuleFor(x => x.Maturity)

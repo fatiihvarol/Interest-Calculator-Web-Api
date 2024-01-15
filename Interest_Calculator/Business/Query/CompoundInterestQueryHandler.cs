@@ -4,39 +4,26 @@ using Interest_Calculator.Business.Cqrs;
 using Interest_Calculator.Schema;
 using MediatR;
 
-namespace Interest_Calculator.Business.Query
+namespace Interest_Calculator.Business.Query;
+public class CompoundInterestQueryHandler : IRequestHandler<CalculateCompoundInterestQuery, ApiResponse<InterestResponse>>
 {
-    // CalculateCompoundInterestQuery tipinde bir isteği işleyen sınıf
-    public class CompoundInterestQueryHandler :
-        IRequestHandler<CalculateCompoundInterestQuery, ApiResponse<InterestResponse>>
+    public Task<ApiResponse<InterestResponse>> Handle(CalculateCompoundInterestQuery request, CancellationToken cancellationToken)
     {
-        // CalculateCompoundInterestQuery isteğini işleyen metot
-        public Task<ApiResponse<InterestResponse>> Handle(CalculateCompoundInterestQuery request, CancellationToken cancellationToken)
+        if (request.Model.InterestFrequency == null)
+            return Task.FromResult(new ApiResponse<InterestResponse>("Bad Request"));
+        
+
+        decimal compoundInterest = request.Model.Principal * (decimal)Math.Pow(1 + (double)(request.Model.InterestRate / (100 * GetNumberOfCompoundingPeriods.Get(request.Model.InterestFrequency))), (double)(request.Model.Maturity * GetNumberOfCompoundingPeriods.Get(request.Model.InterestFrequency))) - request.Model.Principal;
+
+        decimal totalBalance = request.Model.Principal + compoundInterest;
+
+        var response = new InterestResponse
         {
-            // Eğer InterestFrequency null ise, hatalı istek durumuyla ApiResponse dön
-            if (request.Model.InterestFrequency == null)
-            {
-                return Task.FromResult(new ApiResponse<InterestResponse>("Bad Request"));
-            }
+            InterestIncome = Math.Round(compoundInterest, 2, MidpointRounding.AwayFromZero),
+            TotalBalance = Math.Round(totalBalance, 2, MidpointRounding.AwayFromZero)
+        };
 
-            // Faiz frekansına göre bileşikleme periyodunu hesapla
-            decimal numberOfCompoundingPeriods = GetNumberOfCompoundingPeriods.Get(request.Model.InterestFrequency);
-
-            // Doğru formülle bileşik faiz hesapla
-            decimal compoundInterest = request.Model.Principal * (decimal)Math.Pow(1 + (double)(request.Model.InterestRate / (100 * numberOfCompoundingPeriods)), (double)(request.Model.Maturity * numberOfCompoundingPeriods)) - request.Model.Principal;
-
-            // Toplam bakiyeyi hesapla
-            decimal totalBalance = request.Model.Principal + compoundInterest;
-
-            // Hesaplanan değerleri kullanarak InterestResponse nesnesi oluştur
-            var response = new InterestResponse
-            {
-                InterestIncome = compoundInterest,
-                TotalBalance = totalBalance
-            };
-
-            // ApiResponse<InterestResponse> tipinde bir nesneyi Task<ApiResponse<InterestResponse>>'ye dönüştür
-            return Task.FromResult(new ApiResponse<InterestResponse>(response));
-        }
+        // Return ApiResponse<InterestResponse>
+        return Task.FromResult(new ApiResponse<InterestResponse>(response));
     }
 }
