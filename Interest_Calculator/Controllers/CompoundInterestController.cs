@@ -1,3 +1,5 @@
+using Interest_Calculator.Base.Helpers;
+using Interest_Calculator.Base.Response;
 using Interest_Calculator.Schema;
 
 namespace Interest_Calculator.Controllers;
@@ -11,25 +13,12 @@ using System;
     [ApiController]
     public class CompoundInterestController : ControllerBase
     {
-        private decimal GetNumberOfCompoundingPeriods(string interestFrequency)
-        {
-            switch (interestFrequency.ToLower())
-            {
-                case "gün":
-                    return 365m;
-                case "ay":
-                    return 12m;
-                case "yıl":
-                    return 1m;
-                default:
-                    return 1m;
-            }
-        }
+      
 
         [HttpPost]
-        public IActionResult Calculate([FromBody] InterestRequest request)
+        public ApiResponse<InterestResponse> Calculate([FromBody] InterestRequest request)
         {
-            decimal numberOfCompoundingPeriods = GetNumberOfCompoundingPeriods(request.InterestFrequency);
+            decimal numberOfCompoundingPeriods = GetNumberOfCompoundingPeriods.Get(request.InterestFrequency);
     
             // Calculate compound interest with the correct formula
             decimal compoundInterest = request.Principal * (decimal)Math.Pow(1 + (double)(request.InterestRate / (100 * numberOfCompoundingPeriods)), (double)(request.Maturity * numberOfCompoundingPeriods)) - request.Principal;
@@ -42,7 +31,7 @@ using System;
                 TotalBalance = totalBalance
             };
 
-            return Ok(response);
+            return new ApiResponse<InterestResponse>(response);
         }
     
 

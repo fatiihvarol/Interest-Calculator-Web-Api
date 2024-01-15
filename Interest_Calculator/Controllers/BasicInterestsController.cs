@@ -1,31 +1,28 @@
-using Interest_Calculator.Base;
-using Interest_Calculator.Entity;
+using Interest_Calculator.Base.Helpers;
+using Interest_Calculator.Base.Response;
 using Interest_Calculator.Schema;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
-namespace Interest_Calculator.Controllers;
-
-[Route("api/[controller]")]
-[ApiController]
-public class BasicInterestsController : ControllerBase
+namespace Interest_Calculator.Controllers
 {
-    [HttpPost]
-    public IActionResult Calculate([FromBody] InterestRequest request)
+    [Route("api/[controller]")]
+    [ApiController]
+    public class BasicInterestsController : ControllerBase
     {
-        decimal income = request.Principal * request.InterestRate * (request.Maturity * GetNumberOfDays.GetDays(request.InterestFrequency));
-        decimal balance = request.Principal + income;
-
-        var response = new InterestResponse
+        [HttpPost]
+        public ApiResponse<InterestResponse> Calculate([FromBody] InterestRequest request)
         {
-            InterestIncome = income,
-            TotalBalance = balance
-        };
+            decimal income = request.Principal * request.InterestRate * (request.Maturity * GetNumberOfDays.GetDays(request.InterestFrequency));
+            decimal balance = request.Principal + income;
 
-        return Ok(response);
+            var response = new InterestResponse
+            {
+                InterestIncome = income,
+                TotalBalance = balance
+            };
+
+            return new ApiResponse<InterestResponse>(response);
+        }
     }
-
-
-    
-
-    
 }

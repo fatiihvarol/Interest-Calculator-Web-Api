@@ -1,4 +1,4 @@
-namespace Interest_Calculator.Base;
+namespace Interest_Calculator.Base.Helpers;
 
 public class GetNumberOfDays
 {
