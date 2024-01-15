@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Interest_Calculator.props" />
+</Project>
