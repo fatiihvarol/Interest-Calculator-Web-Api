@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "RWshoHjgGpaK+tFOFIjF0sl7pasg9Xf3gfncYvgdvm1gHkPSzTQlN0iVFbOZ95dOjnEbwk4dFFytQSeVqnzoBQ==",
+  "dgSpecHash": "niWwcurcr+ZpEKR4TRJx2bZ684eeKzCxtMN7h1C+dQ/f6ek66VjNhloEILFs9wNvFaXqZbJBsaweSEh4XzLDPQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\fatih\\RiderProjects\\Interest_Calculator\\Interest_Calculator\\Interest_Calculator.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\fatih\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\fatih\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\fatih\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.0\\microsoft.aspnetcore.openapi.8.0.0.nupkg.sha512",
     "C:\\Users\\fatih\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\fatih\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\fatih\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\fatih\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\fatih\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",

@@ -13,8 +13,6 @@ using System;
     [ApiController]
     public class CompoundInterestController : ControllerBase
     {
-      
-
         [HttpPost]
         public ApiResponse<InterestResponse> Calculate([FromBody] InterestRequest request)
         {
