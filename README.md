@@ -19,7 +19,7 @@ The Interest Calculator project is designed to provide a simple and efficient wa
 ## Getting Started
 1. **Clone Project**
     ```bash
-    git clone https://github.com/300-Akbank-Net-Bootcamp/aw-4-fatiihvarol.git
+    git clone https://github.com/fatiihvarol/Interest-Calculator-Web-Api.git
     ```
 
 2. **Install Dependencies:** Navigate to the project folder in the terminal or command prompt and use the `dotnet restore` command to install dependencies.
