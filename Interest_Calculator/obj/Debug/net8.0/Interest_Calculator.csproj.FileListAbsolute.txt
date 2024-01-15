@@ -34,3 +34,6 @@ C:\Users\fatih\RiderProjects\Interest_Calculator\Interest_Calculator\obj\Debug\n
 C:\Users\fatih\RiderProjects\Interest_Calculator\Interest_Calculator\obj\Debug\net8.0\ref\Interest_Calculator.dll
 C:\Users\fatih\RiderProjects\Interest_Calculator\Interest_Calculator\bin\Debug\net8.0\MediatR.dll
 C:\Users\fatih\RiderProjects\Interest_Calculator\Interest_Calculator\bin\Debug\net8.0\MediatR.Contracts.dll
+C:\Users\fatih\RiderProjects\Interest_Calculator\Interest_Calculator\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\fatih\RiderProjects\Interest_Calculator\Interest_Calculator\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\fatih\RiderProjects\Interest_Calculator\Interest_Calculator\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll

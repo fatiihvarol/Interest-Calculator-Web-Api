@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "niWwcurcr+ZpEKR4TRJx2bZ684eeKzCxtMN7h1C+dQ/f6ek66VjNhloEILFs9wNvFaXqZbJBsaweSEh4XzLDPQ==",
+  "dgSpecHash": "ZkGUR8nnSCLVoqXFWnVNGQN/+Y+PyPOwT+GdPYP++msKTwVnRqCdnB+bVx9bpYHCvWLLQnTC3xXwfkZSIKvcaA==",
   "success": true,
   "projectFilePath": "C:\\Users\\fatih\\RiderProjects\\Interest_Calculator\\Interest_Calculator\\Interest_Calculator.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\fatih\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
+    "C:\\Users\\fatih\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\fatih\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\fatih\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
     "C:\\Users\\fatih\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\fatih\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.0\\microsoft.aspnetcore.openapi.8.0.0.nupkg.sha512",

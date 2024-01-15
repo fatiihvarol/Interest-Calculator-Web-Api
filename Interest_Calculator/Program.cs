@@ -1,5 +1,7 @@
     using System.Reflection;
+    using FluentValidation.AspNetCore;
     using Interest_Calculator.Business.Cqrs;
+    using Interest_Calculator.Schema;
 
     var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +11,10 @@
     builder.Services.AddSwaggerGen();
     builder.Services.AddControllers();
     builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CalculateBasicInterestQuery).GetTypeInfo().Assembly));
-
+    builder.Services.AddControllers().AddFluentValidation(x =>
+    {
+        x.RegisterValidatorsFromAssemblyContaining<InterestRequest>();
+    });
     var app = builder.Build();
 
     // Configure the HTTP request pipeline.
