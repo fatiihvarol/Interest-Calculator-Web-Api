@@ -1,19 +1,23 @@
-namespace Interest_Calculator.Base.Helpers;
-
-public class GetNumberOfDays
+namespace Interest_Calculator.Base.Helpers
 {
-    public static decimal GetDays(string InterestFrequency)
+    // Faiz frekansına göre gün sayısını belirleyen yardımcı sınıf
+    public class GetNumberOfDays
     {
-        switch (InterestFrequency.ToLower())
+        // İlgili faiz frekansına göre gün sayısını döndüren metot
+        public static decimal GetDays(string InterestFrequency)
         {
-            case "gün":
-                return 1 / 365m; // Vade gün cinsinden
-            case "ay":
-                return 1 / 12m; // Vade ay cinsinden
-            case "yıl":
-                return 1; // Vade yıl cinsinden
-            default:
-                return 1;
+            // İlgili faiz frekansına göre switch-case yapısı
+            switch (InterestFrequency.ToLower())
+            {
+                case "gün":
+                    return 1 / 365m; // Vade gün cinsinden
+                case "ay":
+                    return 1 / 12m; // Vade ay cinsinden
+                case "yıl":
+                    return 1; // Vade yıl cinsinden
+                default:
+                    return 1;
+            }
         }
     }
 }
